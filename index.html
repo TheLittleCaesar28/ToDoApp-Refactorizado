@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App Refactorizada | MVC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Mis Tareas</h1>
+        
+        <!-- Formulario para agregar tarea -->
+        <div class="add-task-section">
+            <input type="text" id="taskInput" placeholder="Escribe una nueva tarea..." autocomplete="off">
+            <button id="addBtn">➕ Agregar</button>
+        </div>
+
+        <!-- Contador de tareas -->
+        <div class="task-stats">
+            <span id="taskCount">0</span> tareas pendientes
+        </div>
+
+        <!-- Lista de tareas -->
+        <ul id="taskList" class="task-list">
+            <li class="empty-message">✨ No hay tareas para mostrar</li>
+        </ul>
+
+        <!-- Filtros -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="pending">Pendientes</button>
+            <button class="filter-btn" data-filter="completed">Completadas</button>
+        </div>
+    </div>
+
+    <!-- Scripts (orden IMPORTANTE) -->
+    <script src="js/services/StorageService.js"></script>
+    <script src="js/model/TaskModel.js"></script>
+    <script src="js/view/TaskView.js"></script>
+    <script src="js/controller/TaskController.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
